@@ -1,0 +1,10 @@
+compile = [ "moonc", "-t", "./dist", "." ]
+
+run = ["love", "./dist"]
+
+entrypoint = "main.moon"
+
+[languages.moonscript]
+pattern = "**/*.moon"
+
+hidden = [ ".config/", "dist/" ]
