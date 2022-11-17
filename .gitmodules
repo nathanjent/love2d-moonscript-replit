@@ -1,0 +1,3 @@
+[submodule "lib/love-animation"]
+	path = lib/love-animation
+	url = https://github.com/patrixr/love-animation.git
