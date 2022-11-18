@@ -4,7 +4,7 @@ run = [ "love", "." ]
 
 entrypoint = "main.moon"
 
-hidden = [ ".config", ".lit*", "lib", "**/*.lua" ]
+hidden = [ ".config", ".git*", "lib", "**/*.lua" ]
 
 [languages.moonscript]
 pattern = "**/*.moon"
