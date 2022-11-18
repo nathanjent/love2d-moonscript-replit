@@ -1,4 +1,5 @@
 require "lib.love-animation.animation"
+require "lib.cartographer.cartographer"
 
 love.load = ->
   love.graphics.setBackgroundColor {0, 0, 0}

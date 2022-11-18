@@ -1,10 +1,10 @@
 compile = [ "moonc", "." ]
 
-run = ["love", "."]
+run = [ "love", "." ]
 
 entrypoint = "main.moon"
 
+hidden = [ ".config", ".lit*", "lib", "**/*.lua" ]
+
 [languages.moonscript]
 pattern = "**/*.moon"
-
-hidden = [ ".config", ".git", ".gitignore", ".gitmodules", "lib", "*.lua" ]
