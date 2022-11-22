@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<map version="1.2" orientation="orthogonal" renderorder="right-down" width="64" height="16" tilewidth="16" tileheight="16" nextobjectid="1">
+  <properties>
+    <property name="sw4" value="1" />
+    <property name="sw3" value="6" />
+    <property name="sw2" value="5" />
+    <property name="sw1" value="4" />
+    <property name="sw5" value="2" />
+    <property name="sw6" value="3" />
+  </properties>
+  <tileset firstgid="1" name="tileset" columns="3" tilecount="9" tileheight="16" tilewidth="16">
+    <image source="tileset.png" width="48" height="48" />
+    <terraintypes>
+      <terrain name="platforms " tile="0" />
+      <terrain name="platforms" tile="4" />
+    </terraintypes>
+    <tile id="0" terrain="-1,-1,-1,0" />
+    <tile id="3" terrain="-1,0,-1,0" />
+    <tile id="1" terrain="-1,-1,0,0" />
+    <tile id="2" terrain="-1,-1,0,-1" />
+    <tile id="5" terrain="0,-1,0,-1" />
+    <tile id="4" terrain="0,0,0,0" />
+  </tileset>
+  <layer name="Tile 1" width="64" height="16">
+    <data encoding="base64" compression="zlib">
+   eJztVNEOgCAIPFP7/0/uiYUmCq2yTW67BycicKeAw+FwrImNMU6uZQYy4z65lhng/a/ogYy1PBBQ6ky6tzjyQjDE/gUJp84brvprvEB9J0Xs26j1HMXxmkfcq7N0RyvH1/1z79H9sbFH1PZd5wRKz0DIpX0DVr2kWEkDq8aaWUjzsL4Xnkv6c+o4abZP9yite/Po7d/xnlaLXg1OGw9AoQU7
+  </data>
+  </layer>
+</map>

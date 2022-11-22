@@ -4,3 +4,6 @@
 [submodule "lib/cartographer"]
 	path = lib/cartographer
 	url = https://github.com/tesselode/cartographer.git
+[submodule "lib/sti"]
+	path = lib/sti
+	url = https://github.com/karai17/Simple-Tiled-Implementation.git
