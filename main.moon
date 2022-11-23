@@ -2,7 +2,7 @@ love.load = ->
   export sti = require "lib.sti.sti"
   export map = sti "assets/maps/volcanosaur.lua"
 
-  layer = map\addCustomLayer "Sprites", 8
+  layer = map\addCustomLayer "Sprites", 3
 
   player = ([obj for _,obj in pairs(map.objects) when obj.name == "player"])[1]
   
@@ -13,11 +13,10 @@ love.load = ->
         x: player.x
         y: player.y
         ox: sprite\getWidth! / 2
-        oy: sprite\getHeight!
+        oy: 0 --sprite\getHeight!
 
   -- Add controls to player
   layer.update = (dt) =>
-    print "layer update"
     -- 96 pixels per second
     speed = 96
 
@@ -39,7 +38,6 @@ love.load = ->
 
   -- Draw player
   layer.draw = () =>
-    print "layer draw"
     love.graphics.draw @.player.sprite,
         math.floor(@.player.x),
         math.floor(@.player.y),
