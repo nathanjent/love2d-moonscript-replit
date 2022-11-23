@@ -2,7 +2,7 @@ love.load = ->
   export sti = require "lib.sti.sti"
   export map = sti "assets/maps/volcanosaur.lua"
 
-  layer = map\addCustomLayer "Sprites", 3
+  layer = map\addCustomLayer "Sprites"
 
   player = ([obj for _,obj in pairs(map.objects) when obj.name == "player"])[1]
   
