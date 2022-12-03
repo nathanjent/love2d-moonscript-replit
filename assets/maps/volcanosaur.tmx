@@ -1,63 +1,122 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="64" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="4">
- <editorsettings>
-  <export target="volcanosaur.lua" format="lua"/>
- </editorsettings>
- <properties>
-  <property name="sw1" value="4"/>
-  <property name="sw2" value="5"/>
-  <property name="sw3" value="6"/>
-  <property name="sw4" value="1"/>
-  <property name="sw5" value="2"/>
-  <property name="sw6" value="3"/>
- </properties>
- <tileset firstgid="1" name="volcanosaur-tileset" tilewidth="16" tileheight="16" tilecount="9" columns="3">
-  <image source="volcanosaur-tileset.png" width="48" height="48"/>
-  <tile id="0"/>
-  <tile id="7"/>
-  <tile id="2"/>
-  <tile id="3"/>
-  <tile id="4"/>
-  <tile id="5"/>
-  <tile id="6"/>
-  <tile id="1"/>
-  <tile id="8"/>
-  <wangsets>
-   <wangset name="Terrains" type="corner" tile="-1">
-    <wangcolor name="ground" color="#ff0000" tile="4" probability="1"/>
-    <wangtile tileid="0" wangid="0,0,0,1,0,0,0,0"/>
-    <wangtile tileid="1" wangid="0,0,0,1,0,1,0,0"/>
-    <wangtile tileid="2" wangid="0,0,0,0,0,1,0,0"/>
-    <wangtile tileid="3" wangid="0,1,0,1,0,0,0,0"/>
-    <wangtile tileid="4" wangid="0,1,0,1,0,1,0,1"/>
-    <wangtile tileid="5" wangid="0,0,0,0,0,1,0,1"/>
-    <wangtile tileid="6" wangid="0,1,0,1,0,1,0,0"/>
-    <wangtile tileid="7" wangid="0,0,0,1,0,1,0,0"/>
-    <wangtile tileid="8" wangid="0,0,0,1,0,1,0,1"/>
-   </wangset>
-  </wangsets>
- </tileset>
- <layer id="1" name="platforms " width="64" height="16">
-  <data encoding="csv">
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,8,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,7,5,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,5,6,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,7,5,5,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,5,6,0,0,0,0,1,8,2,8,
-0,0,0,0,0,0,0,0,0,0,0,0,1,7,5,9,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,5,5,5,6,0,0,0,0,0,0,0,1,8,3,0,0,0,0,4,5,6,0,0,0,0,4,5,5,5,
-2,8,2,8,8,3,0,0,0,0,0,0,4,5,5,5,6,0,0,0,0,1,8,2,2,3,0,0,0,0,0,0,0,1,7,5,5,5,6,0,0,0,0,0,0,0,4,5,9,3,0,1,8,7,5,9,2,8,3,0,4,5,5,5,
-5,5,5,5,5,9,8,3,0,0,1,8,7,5,5,5,6,0,0,0,0,4,5,5,5,9,8,8,3,0,0,0,0,4,5,5,5,5,6,0,0,0,1,2,3,1,7,5,5,9,8,7,5,5,5,5,5,5,9,3,4,5,5,5,
-5,5,5,5,5,5,5,6,1,8,7,5,5,5,5,5,6,0,0,0,1,7,5,5,5,5,5,5,9,8,8,2,8,7,5,5,5,5,6,0,0,1,7,5,6,4,5,5,5,5,5,5,5,5,5,5,5,5,5,6,4,5,5,5,
-5,5,5,5,5,5,5,6,4,5,5,5,5,5,5,5,6,0,0,0,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6,0,0,4,5,5,6,4,5,5,5,5,5,5,5,5,5,5,5,5,5,6,4,5,5,5
-</data>
- </layer>
- <objectgroup id="2" name="actors">
-  <object id="3" name="player" x="16" y="160" width="32" height="32"/>
- </objectgroup>
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<map version="1.2" orientation="orthogonal" renderorder="right-down" width="64" height="16" tilewidth="16" tileheight="16" nextobjectid="3">
+  <properties>
+    <property name="sw4" value="1" />
+    <property name="sw3" value="6" />
+    <property name="sw2" value="5" />
+    <property name="sw1" value="4" />
+    <property name="sw5" value="2" />
+    <property name="sw6" value="3" />
+  </properties>
+  <tileset firstgid="1" name="volcanosaur-tileset" columns="3" tilecount="24" tileheight="16" tilewidth="16">
+    <properties>
+      <property name="embedded_png">
+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
+
+</property>
+    </properties>
+    <image source="volcanosaur-tileset.png" width="48" height="128" />
+    <terraintypes>
+      <terrain name="lava" tile="4" />
+      <terrain name="wall" tile="13" />
+    </terraintypes>
+    <tile id="4" terrain="0,0,0,0" />
+    <tile id="0" terrain="-1,-1,-1,0" />
+    <tile id="1" terrain="-1,-1,0,0" />
+    <tile id="2" terrain="-1,-1,0,-1" />
+    <tile id="3" terrain="-1,0,-1,0" />
+    <tile id="5" terrain="0,-1,0,-1" />
+    <tile id="6" terrain="-1,0,0,0" />
+    <tile id="7" terrain="-1,-1,0,0" />
+    <tile id="8" terrain="0,-1,0,0" />
+    <tile id="13" terrain="1,1,1,1" />
+    <tile id="9" terrain="-1,-1,-1,1" />
+    <tile id="10" terrain="-1,-1,1,1" />
+    <tile id="11" terrain="-1,-1,1,-1" />
+    <tile id="12" terrain="-1,1,-1,1" />
+    <tile id="14" terrain="1,-1,1,-1" />
+    <tile id="15" terrain="-1,1,-1,-1" />
+    <tile id="16" terrain="1,1,-1,-1" />
+    <tile id="17" terrain="1,-1,-1,-1" />
+    <tile id="18" terrain="1,1,1,-1" />
+    <tile id="19" terrain="1,1,-1,1" />
+    <tile id="21" terrain="1,-1,1,1" />
+    <tile id="22" terrain="-1,1,1,1" />
+    <tile id="23" terrain="1,1,1,1" />
+    <tile id="20" terrain="1,1,1,1" />
+  </tileset>
+  <layer name="platforms " width="64" height="16">
+    <data encoding="base64" compression="zlib">
+   eJztlYsOgjAMRSug4AufqP//pXaRG2pTCmGAMeEmN4Ts1dNtHdGiRYsWxWnH3rMPvw5kBIHFssUX+j/ZL/Zpphin1JFd0Yenql3WtvjQ/8a+zhTjlAo8gb2kJgeB7UI239lp+0eB507NOZjrXK/YBTuNnCOJnCMIeZhrb0PcOXvN3kTMk40wh6cpar1kn5If5yupv1q69mvGrvahQsx9+b174vHrdfT7hncM9/5B34z6bbDqAu5fQU2uvbuo974PPzi2Ym7kJBdtiCNV42DUeNR7vHfyP+RA5qcS4zS/xYJYuvbL45c1Ta+Bua11ZZ/UWEuzy698/3Q7xml+i0VzyXPRFrfk13Wxaw1v7TZ+5KArD7LNOv9DY/P4M/IZYvjfPPkMEg==
+  </data>
+  </layer>
+  <objectgroup name="actors">
+    <object name="player" id="2" x="40" y="184">
+      <point />
+      <properties>
+        <property name="tile" value="8" />
+      </properties>
+    </object>
+  </objectgroup>
 </map>

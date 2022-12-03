@@ -1,7 +1,6 @@
 love.load = ->
   export sti = require "lib.sti.sti"
   export map = sti "assets/maps/volcanosaur.lua"
-
   layer = map\addCustomLayer "Sprites"
 
   player = ([obj for _,obj in pairs(map.objects) when obj.name == "player"])[1]
@@ -13,7 +12,7 @@ love.load = ->
         x: player.x
         y: player.y
         ox: sprite\getWidth! / 2
-        oy: 0 --sprite\getHeight!
+        oy: 0
 
   -- Add controls to player
   layer.update = (dt) =>
@@ -51,6 +50,43 @@ love.load = ->
     -- that our sprite is offset properly
     love.graphics.setPointSize 5
     love.graphics.points math.floor(@.player.x), math.floor(@.player.y)
+    
+  export game = {
+    state: "menu"
+    states:
+      menu:
+        name: "menu"
+        input_handler: (input) =>
+          print "state: #{state.name} 1"
+          switch input
+            when "backToGame"
+              print "state: #{state.name} 2"
+              state = game_states.game_loop
+              print "state: #{state.name} 3"
+        keys:
+          escape: "backToGame"
+        keys_released: {}
+      game_loop:
+        name: "loop"
+        input_handler: (input) ->
+          switch input
+            when "openMenu"
+              state = game_states.menu
+        keys:
+          escape: "openMenu"
+        keys_released: {}
+  }
+  
+love.keypressed = (k)->
+  print "key pressed: #{k}"
+  state = game.states[game.state]
+  binding = state.keys[k]
+  state.input_handler binding
+
+love.keyreleased = (k)->
+  state = game.states[game.state]
+  binding = state.keys_released[k]
+  state.input_handler binding
 
 love.update = (dt)->
   map\update dt
