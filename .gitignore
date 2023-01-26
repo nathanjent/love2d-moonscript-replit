@@ -1,2 +1,6 @@
 *.lua
-*.pxo
+*.pxo/luarocks
+/lua
+/lua_modules
+/.luarocks
+/luarocks

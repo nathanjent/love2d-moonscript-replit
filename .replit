@@ -3,8 +3,19 @@ compile = [ "moonc", "." ]
 run = [ "love", "." ]
 
 entrypoint = "main.moon"
+hidden = [
+  "shell.nix",
+  ".config",
+  ".git*",
+  "lib",
+  "**/*.lua",
+  ".luarocks",
+  "luarocks",
+  "lua",
+  "lua_modules",
+]
 
-hidden = [ ".config", ".git*", "lib", "**/*.lua" ]
+audio = true
 
-[languages.moonscript]
-pattern = "**/*.moon"
+[nix]
+channel = "stable-22_11"

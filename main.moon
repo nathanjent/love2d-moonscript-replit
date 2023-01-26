@@ -1,6 +1,13 @@
 love.load = ->
+  require "replitdbclient"
   export sti = require "lib.sti.sti"
   export map = sti "assets/maps/volcanosaur.lua"
+
+  db=ReplitDbClient!
+  db\set "animal", "dog"
+  animal = db\get "animal"
+  print animal
+
   layer = map\addCustomLayer "Sprites"
 
   player = ([obj for _,obj in pairs(map.objects) when obj.name == "player"])[1]
@@ -8,11 +15,11 @@ love.load = ->
   -- Create player object
   sprite = love.graphics.newImage "assets/sprites/volcanosaur.png"
   layer.player =
-        sprite: sprite
-        x: player.x
-        y: player.y
-        ox: sprite\getWidth! / 2
-        oy: 0
+    sprite: sprite
+    x: player.x
+    y: player.y
+    ox: sprite\getWidth! / 2
+    oy: 0
 
   -- Add controls to player
   layer.update = (dt) =>
@@ -21,30 +28,30 @@ love.load = ->
 
     -- Move player up
     if love.keyboard.isDown("w") or love.keyboard.isDown("up")
-        @.player.y -= speed * dt
+      @.player.y -= speed * dt
 
     -- Move player down
     if love.keyboard.isDown("s") or love.keyboard.isDown("down")
-        @.player.y += speed * dt
+      @.player.y += speed * dt
 
     -- Move player left
     if love.keyboard.isDown("a") or love.keyboard.isDown("left")
-        @.player.x -= speed * dt
+      @.player.x -= speed * dt
 
     -- Move player right
     if love.keyboard.isDown("d") or love.keyboard.isDown("right")
-        @.player.x += speed * dt
+      @.player.x += speed * dt
 
   -- Draw player
   layer.draw = () =>
     love.graphics.draw @.player.sprite,
-        math.floor(@.player.x),
-        math.floor(@.player.y),
-        0,
-        1,
-        1,
-        @.player.ox,
-        @.player.oy
+      math.floor(@.player.x),
+      math.floor(@.player.y),
+      0,
+      1,
+      1,
+      @.player.ox,
+      @.player.oy
 
     -- Temporarily draw a point at our location so we know
     -- that our sprite is offset properly
@@ -57,7 +64,7 @@ love.load = ->
       menu:
         name: "menu"
         input_handler: (input) =>
-          print "state: #{state.name} 1"
+          --print "state: #{state.name} 1"
           switch input
             when "backToGame"
               print "state: #{state.name} 2"
